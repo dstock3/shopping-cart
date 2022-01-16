@@ -12,16 +12,14 @@ const Main = (props) => {
     const determineItems = () => {
         let total = 0
         for (let i = 0; i < cart.length; i++) {
-            let items = cart[i]
-            for (let y=0; y < items.length; y++) {
-                total += items[y].length
-            }
+            total += cart[i].length
+
         }
         return total
     }
     
     const addToCart = (newItem) => {
-        setCart([...cart, [newItem]])
+        setCart([...cart, newItem])
     }
 
     const clearCart = () => {

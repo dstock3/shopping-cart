@@ -17,7 +17,7 @@ const RouteSwitch = () => {
                         } />
                         {
                             products.map((item) => 
-                                <Route path={`/${item.id}`} element={
+                                <Route path={`/${item.id}`} key={item.id} element={
                                     <Main item={item} />
                                 } />
                             )
