@@ -8,7 +8,7 @@ const Item = (props) => {
     return (
         <div className="item" id={props.id}>
             <Link to = {{pathname: `/${props.id}`}}>
-                <h3>{props.name}</h3>
+                <h3 className="item-name">{props.name}</h3>
             </Link>
             <img src={props.image} alt={props.imgAlt}></img>
             <p className="description">
