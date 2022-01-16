@@ -1,8 +1,11 @@
 import React from 'react'
 import {products} from '../productData'
+import UseQty from '../Hooks/UseQty'
 
 const Featured = (props) => {
-    let newestItem = products[products.length - 1]
+    const [setQty, submitHandler] = UseQty(props.item, props.addToCart)
+
+    const newestItem = products[products.length - 1]
     return (
         <div className="featured">
             <h1>Featured: {newestItem.name}</h1>
@@ -14,7 +17,20 @@ const Featured = (props) => {
                     <p>{newestItem.des}</p>
                     <div className="feat-prc-container">
                         <div className="feat-price">{newestItem.price}</div>
-                        <button onClick={()=>props.addToCart(newestItem)}>Add to Cart</button>
+
+                        <form className="options-container" onSubmit={submitHandler}>
+                            <button>Add to Cart</button>
+                            <div className="item-options">
+                                <label htmlFor="qty">Qty: </label>
+                                
+                                <select name="qty" id="qty" onChange={e=>setQty(e.target.value)}>
+                                    {
+                                        props.qty.map((item) => 
+                                            <option  key={item} value={item}>{item}</option> )
+                                    }
+                                </select>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

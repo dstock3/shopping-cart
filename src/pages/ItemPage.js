@@ -1,13 +1,16 @@
 import React from 'react'
+import UseQty from '../Hooks/UseQty'
 
 const ItemPage = (props) => {
+    const [setQty, submitHandler] = UseQty(props.item, props.addToCart)
+
     return (
         <div className="item-page">
             <h3>{props.item.name}</h3>
             <img src={props.item.image} alt={props.item.imgAlt}></img>
             <p className="description">{props.item.des}</p>
             <div className="item-price">{props.item.price}</div>
-            {/*
+            
             <form className="options-container" onSubmit={submitHandler}>
                 <button>Add to Cart</button>
                 <div className="item-options">
@@ -20,7 +23,7 @@ const ItemPage = (props) => {
                         }
                     </select>
                 </div>
-            </form> */}
+            </form>
         </div>
     )
 }

@@ -1,9 +1,9 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import UseQty from '../Hooks/UseQty'
 
 const Item = (props) => {
-    const [setQty, submitHandler] = UseQty(props)
+    const [setQty, submitHandler] = UseQty(props.item, props.addToCart)
 
     return (
         <div className="item" id={props.id}>
