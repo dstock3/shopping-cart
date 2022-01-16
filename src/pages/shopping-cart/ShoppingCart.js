@@ -1,29 +1,17 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import Item from '../../components/Item'
 
 const ShoppingCart = (props) => {
-
-    
-    useEffect(()=> {
-        for (let i = 0; i < props.cart.length; i++) {
-            //console.log(props.cart[i])
-
-        }
-        
-
-    })
 
     const getPrice = () => {
         let total = 0
         for (let i = 0; i < props.cart.length; i++) {
             let items = props.cart[i]
-
             for (let y = 0; y < items.length; y++) {
                 let item = items[y]
                 let price = parseFloat(item.price.substring(1));
                 total += price
             }
-            
         }
 
         return total.toFixed(2)
@@ -34,12 +22,16 @@ const ShoppingCart = (props) => {
             {
                 props.cart.length > 0 ?
                     <ul className="cart-container">
-                        {props.cart.map(item => (
-                            <li className="cart-listing" key={item}>
-                                <div className="cart-product-name">{item.name}</div>
-                                <div className="cart-product-price">{item.price}</div>
-                                <img className="cart-img" src={item.image} alt={item.alt}></img>
-
+                        {props.cart.map(itemArray => (
+                            <li className="cart-line-item" key={itemArray[0].id}>
+                                <h3 className="cart-item-name">Product Name: {itemArray[0].name}</h3>
+                                <div className="cart-item-image">
+                                    <img src={itemArray[0].image} alt={itemArray[0].alt}></img>
+                                </div>
+                                <div className="cart-item-container">
+                                    <div className="cart-item-qty">Quantity: {itemArray.length}</div>
+                                    <div className="cart-unit-price">Unit Price: {itemArray[0].price}</div>
+                                </div>
                             </li>
                         ))}
                     </ul> :
