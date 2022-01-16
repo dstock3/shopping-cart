@@ -4,6 +4,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Homepage from './homepage/Homepage'
 import ShoppingCart from './shopping-cart/ShoppingCart'
+import ItemPage from './ItemPage'
 
 const Main = (props) => {
     const [cart, setCart] = useState([])
@@ -35,6 +36,8 @@ const Main = (props) => {
                 <Homepage cart={cart} addToCart={addToCart} /> :
             props.cart ?
                 <ShoppingCart cart={cart} addToCart={addToCart} clearCart={clearCart}/> :
+            props.item ?
+                <ItemPage item={props.item} /> :
                 null
             }
             <Footer />

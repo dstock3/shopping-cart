@@ -1,21 +1,15 @@
 import React, {useState} from 'react'
+import { Link } from 'react-router-dom'
+import UseQty from '../Hooks/UseQty'
 
 const Item = (props) => {
-    const [qty, setQty] = useState(1)
-
-    const submitHandler = e => {
-        e.preventDefault()
-        let itemArray = []
-        for (let i = 0; i < qty; i++) {
-            itemArray.push(props.item)
-           
-        }
-        props.addToCart(itemArray)
-    }
+    const [setQty, submitHandler] = UseQty(props)
 
     return (
         <div className="item" id={props.id}>
-            <h3>{props.name}</h3>
+            <Link to = {{pathname: `/${props.id}`}}>
+                <h3>{props.name}</h3>
+            </Link>
             <img src={props.image} alt={props.imgAlt}></img>
             <p className="description">
                 {
