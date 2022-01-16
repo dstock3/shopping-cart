@@ -1,11 +1,11 @@
 import React from 'react'
 import Main from './pages/Main';
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { HashRouter, Routes, Route } from "react-router-dom"
 
 const RouteSwitch = () => {
 
     return (
-        <BrowserRouter>
+        <HashRouter>
                 <Routes>
                         <Route path="/" element={
                             <Main home={true} />
@@ -15,7 +15,7 @@ const RouteSwitch = () => {
                             <Main cart={true} />
                         } />
                 </Routes>
-        </BrowserRouter>
+        </HashRouter>
     )
 }
 
