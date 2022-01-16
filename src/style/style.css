@@ -120,6 +120,11 @@ header a {
     display: flex;
     border: 1px solid white;
     border-radius: 5px;
+}
+
+.featured a {
+    text-decoration: none;
+    color: inherit; 
 
 }
 
@@ -133,7 +138,6 @@ header a {
     border: 2px solid white;
     border-radius: 15%;
     margin-right: 75px;
-    
     font-size: 1.25em;
     transition: 500ms;
     width: 133px;

@@ -1,12 +1,15 @@
 import React from 'react'
 import UseQty from '../Hooks/UseQty'
+import { Link } from 'react-router-dom'
 
 const Featured = (props) => {
     const [setQty, submitHandler] = UseQty(props.item, props.addToCart)
 
     return (
         <div className="featured">
-            <h1>Featured: {props.item.name}</h1>
+            <Link to = {{pathname: `/${props.item.id}`}}>
+                <h1 className="feat-head">Featured: {props.item.name}</h1>
+            </Link>
             <div className="feat-main-container">
                 <div className="feat-img-container">
                     <img src={props.item.image} alt={props.item.alt}></img>
