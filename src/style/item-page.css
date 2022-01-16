@@ -1,14 +1,21 @@
 .item-page {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 55%;
+    border: 1px solid white;
+    margin: auto;
 }
 
 .item-container {
     display: flex;
     justify-content: space-between;
-    width: 50%;
+    width: 100%;
     margin: auto;
+    margin-bottom: 25px;
+}
+
+.item-image {
+    margin-left: 25px;
 }
 
 .item-des-container {
@@ -16,6 +23,7 @@
     flex-direction: column;
     justify-content: space-between;
     width: 50%;
+    margin-right: 25px;
 }
 
 h1 {
@@ -32,4 +40,33 @@ h1 {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    margin-bottom: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+        .item-page {
+            width: 100%;
+        }
+
+        .item-container {
+            flex-direction: column;
+            width: 90%;
+            margin: auto;
+        }
+
+        .item-image {
+            margin: auto;
+        }
+
+        .item-des-container {
+            width: 85%;
+            margin: auto;
+
+        }
+
+        .item-options-container {
+            width: 66%;
+
+        }
+
 }

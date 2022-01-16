@@ -12,6 +12,7 @@ body {
     background-color: black;
     color:white;
     font-family: Outfit;
+   
 }
 
 button {
@@ -168,16 +169,18 @@ header a {
 
 footer {
     height: 100px;
+    width: 100%;
     margin-top: 15px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     font-size: 1.5em;
+
 }
 
 .options-container {
-    width: 95%;
+    width: 85%;
     display: flex;
 }
 
@@ -187,14 +190,17 @@ footer {
 }
 
 .feat-prc-container .options-container {
-    width: 20%;
-
+    justify-content: flex-end;
+    width: 100%;
 }
 
 .feat-prc-container .options-container button {
-    width: 100%;
-    justify-content: flex-end;
     margin-right: 15px;
+}
+
+.feat-prc-container .options-container .item-options {
+    display: flex;
+    align-items: center;
 }
 
 .item-options input {
@@ -239,6 +245,8 @@ img {
 @media only screen and (max-width: 600px) {
     .products {
         flex-direction: column;
+        width: 100%;
+        margin-top: 25px;
     }
 
     .logo {
