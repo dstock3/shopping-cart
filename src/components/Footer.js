@@ -2,7 +2,7 @@ import React from 'react'
 
 function Footer() {
     const decStyle = {
-        width: "85%"
+        width: "95%"
     }
     return (
         <footer>

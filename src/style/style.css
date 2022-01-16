@@ -179,8 +179,22 @@ footer {
 .options-container {
     width: 95%;
     display: flex;
+}
+
+.products .options-container {
     justify-content: space-between;
     margin: 10px;
+}
+
+.feat-prc-container .options-container {
+    width: 20%;
+
+}
+
+.feat-prc-container .options-container button {
+    width: 100%;
+    justify-content: flex-end;
+    margin-right: 15px;
 }
 
 .item-options input {
