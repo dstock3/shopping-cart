@@ -1,22 +1,20 @@
 import React from 'react'
-import {products} from '../productData'
 import UseQty from '../Hooks/UseQty'
 
 const Featured = (props) => {
     const [setQty, submitHandler] = UseQty(props.item, props.addToCart)
 
-    const newestItem = products[products.length - 1]
     return (
         <div className="featured">
-            <h1>Featured: {newestItem.name}</h1>
+            <h1>Featured: {props.item.name}</h1>
             <div className="feat-main-container">
                 <div className="feat-img-container">
-                    <img src={newestItem.image} alt={newestItem.alt}></img>
+                    <img src={props.item.image} alt={props.item.alt}></img>
                 </div>
                 <div className="feat-des-container">
-                    <p>{newestItem.des}</p>
+                    <p>{props.item.des}</p>
                     <div className="feat-prc-container">
-                        <div className="feat-price">{newestItem.price}</div>
+                        <div className="feat-price">{props.item.price}</div>
 
                         <form className="options-container" onSubmit={submitHandler}>
                             <button>Add to Cart</button>
