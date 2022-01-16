@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/shopping-cart/static/css/main.a7bca82d.css",
+    "main.css": "/shopping-cart/static/css/main.76848c98.css",
     "main.js": "/shopping-cart/static/js/main.aaef7170.js",
     "static/media/Raleway-SemiBold.ttf": "/shopping-cart/static/media/Raleway-SemiBold.243af299ad3631bfc369.ttf",
     "static/media/Outfit-Regular.ttf": "/shopping-cart/static/media/Outfit-Regular.8422587fbc9bbf235e30.ttf",
     "index.html": "/shopping-cart/index.html",
     "static/media/cart.svg": "/shopping-cart/static/media/cart.46cb7d4b356f96f7ba56278ed3f0bcbd.svg",
-    "main.a7bca82d.css.map": "/shopping-cart/static/css/main.a7bca82d.css.map",
+    "main.76848c98.css.map": "/shopping-cart/static/css/main.76848c98.css.map",
     "main.aaef7170.js.map": "/shopping-cart/static/js/main.aaef7170.js.map"
   },
   "entrypoints": [
-    "static/css/main.a7bca82d.css",
+    "static/css/main.76848c98.css",
     "static/js/main.aaef7170.js"
   ]
 }
