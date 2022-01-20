@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Products from '../../components/Products'
 import '../../style/cart.css'
 
@@ -28,6 +29,7 @@ const ShoppingCart = (props) => {
                 <h2>Checkout</h2>
                 {
                     props.cart.length > 0 ?
+                        <>
                         <ul className="cart-container">
                             {props.cart.map((itemArray, index) => (
                                 <>
@@ -48,20 +50,23 @@ const ShoppingCart = (props) => {
                                     </li>
                                 </>  
                             ))}
-                        </ul> :
+                        </ul>
+                        <div className="cart-total-container">
+                            {
+                                props.cart.length > 0 ?
+                                    <h4 className="cart-total">Total: ${getPrice()}</h4> : 
+                                    <h4 className="cart-total">Total: $0.00</h4>
+                            }
+                            <button onClick={props.clearCart}>Clear Shopping Cart</button>
+                            <button onClick={props.clearCart}>Submit Order</button>
+                        </div>
+                        </>
+                        :
                         <div className="cart-container">
                             <p className="cart-empty">Your shopping cart is currently empty.</p>
+                            <Link className="keep-shopping" to= {{pathname: '/'}}>Continue Shopping</Link>
                         </div> 
                 }
-                <div className="cart-total-container">
-                    {
-                        props.cart.length > 0 ?
-                            <h4 className="cart-total">Total: ${getPrice()}</h4> : 
-                            <h4 className="cart-total">Total: $0.00</h4>
-                    }
-                    <button onClick={props.clearCart}>Clear Shopping Cart</button>
-                    <button onClick={props.clearCart}>Submit Order</button>
-                </div>
             </div>
 
         </div>
