@@ -30,6 +30,7 @@ const ShoppingCart = (props) => {
                 {
                     props.cart.length > 0 ?
                         <>
+                        <div className="dec-line" style={{margin: "auto", width: "85%"}}></div>
                         <ul className="cart-container">
                             {props.cart.map((itemArray, index) => (
                                 <>
@@ -51,6 +52,7 @@ const ShoppingCart = (props) => {
                                 </>  
                             ))}
                         </ul>
+                        <div className="dec-line" style={{margin: "auto", width: "85%"}}></div>
                         <div className="cart-total-container">
                             {
                                 props.cart.length > 0 ?
@@ -62,10 +64,13 @@ const ShoppingCart = (props) => {
                         </div>
                         </>
                         :
-                        <div className="cart-container">
-                            <p className="cart-empty">Your shopping cart is currently empty.</p>
-                            <Link className="keep-shopping" to= {{pathname: '/'}}>Continue Shopping</Link>
-                        </div> 
+                        <>
+                            <div className="cart-container">
+                                <p className="cart-empty">Your shopping cart is currently empty.</p>
+                                <Link className="keep-shopping" to= {{pathname: '/'}}>Continue Shopping</Link>
+                            </div>
+                            <div className="dec-line" style={{margin: "auto", width: "85%"}}></div>
+                        </>
                 }
             </div>
 
