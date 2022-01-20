@@ -23,7 +23,7 @@ const ShoppingCart = (props) => {
 
             <div className="suggested">
                 <h2>Suggested Items</h2>
-                <Products addToCart={props.addToCart}/>
+                <Products addToCart={props.addToCart} boughtItems={props.cart}/>
             </div>
             <div className="cart-breakdown">
                 <h2>Checkout</h2>
