@@ -22,10 +22,7 @@ const ShoppingCart = (props) => {
     return (
         <div className="cart">
             {props.cart.length > 0 ?
-                <div className="suggested">
-                    <h2>Suggested Items</h2>
-                    <SuggestedItems products={products} boughtItems={props.cart} addToCart={props.addToCart} />
-                </div> :
+                <SuggestedItems products={products} boughtItems={props.cart} addToCart={props.addToCart} /> :
                 <div className="suggested">
                     <h2>Suggested Items</h2>
                     <Products addToCart={props.addToCart} />
