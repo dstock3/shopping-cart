@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Products from '../../components/Products'
+import {products} from '../../productData'
+import SuggestedItems from '../../components/SuggestedItems'
 import '../../style/cart.css'
 
 const ShoppingCart = (props) => {
@@ -14,17 +16,22 @@ const ShoppingCart = (props) => {
                 total += price
             }
         }
-
         return total.toFixed(2)
     }
 
     return (
         <div className="cart">
+            {props.cart.length > 0 ?
+                <div className="suggested">
+                    <h2>Suggested Items</h2>
+                    <SuggestedItems products={products} boughtItems={props.cart} addToCart={props.addToCart} />
+                </div> :
+                <div className="suggested">
+                    <h2>Suggested Items</h2>
+                    <Products addToCart={props.addToCart} />
+                </div>
+            }
 
-            <div className="suggested">
-                <h2>Suggested Items</h2>
-                <Products addToCart={props.addToCart} boughtItems={props.cart}/>
-            </div>
             <div className="cart-breakdown">
                 <h2>Checkout</h2>
                 {
