@@ -102,8 +102,7 @@ header a {
     padding: 15px;
     transition: 500ms;
     cursor: default;
-    
-    
+    margin-bottom: 15px;
 }
 
 .feat-main-container:hover {

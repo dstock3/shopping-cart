@@ -1,7 +1,7 @@
 .item-page {
     display: flex;
     flex-direction: column;
-    width: 55%;
+    width: 45%;
     border: 1px solid white;
     margin-bottom: 15px;
 }

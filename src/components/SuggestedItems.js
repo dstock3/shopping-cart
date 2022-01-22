@@ -27,32 +27,24 @@ const SuggestedItems = (props) => {
     
     return (
         <div className="suggested">
-        
-        {props.boughtItems.length < 6 ?
-            <>
-                <h2>Suggested Items</h2>
-                <div className="products" id="suggested-items">
-                    {props.boughtItems.map((boughtItem) => (
-                        <>
-                            {props.products.map((productItem) => ( 
-                                <>
-                                {productItem.id !== boughtItem[0].id ?
-                                    <Item id={productItem.id} qty={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]} addToCart={props.addToCart} item={productItem} key={productItem.id} name={productItem.name} image={productItem.image} imgAlt={productItem.alt} des={productItem.des} price={productItem.price} /> : null
-                            }
-                                </>
-                            )
+            {props.boughtItems.length < 6 ?
+                <>
+                    <h2>Suggested Items</h2>
+                    <div className="products" id="suggested-items">
+                        {props.boughtItems.map((boughtItem) => 
+                                props.products.map((productItem) => 
+                                    productItem.id !== boughtItem[0].id ?
+                                        <Item key={productItem.id} id={productItem.id} qty={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]} addToCart={props.addToCart} item={productItem} name={productItem.name} image={productItem.image} imgAlt={productItem.alt} des={productItem.des} price={productItem.price} /> : null)
                         )}
-                        </>
-                    ))}
-                </div>
-            </> :
-            <> 
-                <h2 className="products" id="thank-you">Thank you for shopping with us.</h2>
-                <div className="thank-you-message">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                </div>
-            </>    
-        }
+                    </div>
+                </> :
+                <> 
+                    <h2 className="products" id="thank-you">Thank you for shopping with us.</h2>
+                    <div className="thank-you-message">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    </div>
+                </>
+            }
         </div>
   )
 };

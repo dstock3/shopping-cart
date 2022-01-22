@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 import Products from '../../components/Products'
 import {products} from '../../productData'
@@ -6,6 +6,8 @@ import SuggestedItems from '../../components/SuggestedItems'
 import '../../style/cart.css'
 
 const ShoppingCart = (props) => {
+    const [order, setOrder] = useState(null)
+
     const getPrice = () => {
         let total = 0
         for (let i = 0; i < props.cart.length; i++) {
@@ -19,6 +21,12 @@ const ShoppingCart = (props) => {
         return total.toFixed(2)
     }
 
+    const submitHandler = (cart) => {
+        setOrder(cart)
+        
+
+    }
+
     return (
         <div className="cart">
             <div className="cart-breakdown">
@@ -29,23 +37,21 @@ const ShoppingCart = (props) => {
                         <div className="dec-line" style={{margin: "auto", width: "85%"}}></div>
                         <ul className="cart-container">
                             {props.cart.map((itemArray, index) => (
-                                <>
-                                    <li className="cart-line-item" key={index}>
-                                        <div className="cart-item-image">
-                                            <img src={itemArray[0].image} alt={itemArray[0].alt}></img>
-                                        </div>
-                                        <div className="cart-item-container">
-                                            <h3 className="cart-item-name">Product Name: {itemArray[0].name}</h3>
-                                            {
-                                                itemArray[0].des.length > 75 ?
-                                                    <p className="cart-item-des">{itemArray[0].des.substring(0, 75) + "..."}</p> :
-                                                    <p className="cart-item-des">{itemArray[0].des}</p>
-                                            }
-                                            <div className="cart-item-qty">Quantity: {itemArray.length}</div>
-                                            <div className="cart-unit-price">Unit Price: {itemArray[0].price}</div>
-                                        </div>
-                                    </li>
-                                </>  
+                                <li className="cart-line-item" key={itemArray[0].id}>
+                                    <div className="cart-item-image">
+                                        <img src={itemArray[0].image} alt={itemArray[0].alt}></img>
+                                    </div>
+                                    <div className="cart-item-container">
+                                        <h3 className="cart-item-name">Product Name: {itemArray[0].name}</h3>
+                                        {
+                                            itemArray[0].des.length > 75 ?
+                                                <p className="cart-item-des">{itemArray[0].des.substring(0, 75) + "..."}</p> :
+                                                <p className="cart-item-des">{itemArray[0].des}</p>
+                                        }
+                                        <div className="cart-item-qty">Quantity: {itemArray.length}</div>
+                                        <div className="cart-unit-price">Unit Price: {itemArray[0].price}</div>
+                                    </div>
+                                </li> 
                             ))}
                         </ul>
                         <div className="dec-line" style={{margin: "auto", width: "85%"}}></div>
@@ -56,7 +62,7 @@ const ShoppingCart = (props) => {
                                     <h4 className="cart-total">Total: $0.00</h4>
                             }
                             <button onClick={props.clearCart}>Clear Shopping Cart</button>
-                            <button onClick={props.clearCart}>Submit Order</button>
+                            <button onClick={()=>submitHandler(props.cart)}>Submit Order</button>
                         </div>
                         </>
                         :
