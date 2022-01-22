@@ -3,7 +3,7 @@ import Item from './Item';
 
 const SuggestedItems = (props) => {
     useEffect(()=> {
-        if (props.boughtItems.length < 6) {
+        if (props.boughtItems.length < props.products.length) {
             const suggestedItems = document.getElementById("suggested-items")
             const items = Array.from(suggestedItems.children)
             for (let i = 0; i < items.length; i++) {
@@ -18,7 +18,6 @@ const SuggestedItems = (props) => {
                 }
                 for (let x = 0; x < props.boughtItems.length; x++) {
                     if (props.boughtItems[x][0].id == items[i].id) {
-                        console.log(props.boughtItems[x][0].id)
                         items[i].remove()
                     }
                 }

@@ -103,6 +103,7 @@ header a {
     transition: 500ms;
     cursor: default;
     
+    
 }
 
 .feat-main-container:hover {
@@ -111,8 +112,10 @@ header a {
 
 .feat-img-container {
     width: 50%;
+    height: 50%;
     display: flex;
-    margin-left: 7%;
+    align-self: center;
+    justify-content: center;
 }
 
 .feat-des-container {
@@ -131,7 +134,7 @@ header a {
 
 .products {
     width: 85%;
-    margin-top: 50px;
+    margin-top: 15px;
     display: flex;
     border: 1px solid white;
     border-radius: 5px;
@@ -261,7 +264,7 @@ img {
     border-bottom: 1px solid white;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 950px) {
     .products {
         flex-direction: column;
         width: 100%;

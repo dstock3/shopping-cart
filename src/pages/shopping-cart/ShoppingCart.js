@@ -21,14 +21,6 @@ const ShoppingCart = (props) => {
 
     return (
         <div className="cart">
-            {props.cart.length > 0 ?
-                <SuggestedItems products={products} boughtItems={props.cart} addToCart={props.addToCart} /> :
-                <div className="suggested">
-                    <h2>Suggested Items</h2>
-                    <Products addToCart={props.addToCart} />
-                </div>
-            }
-
             <div className="cart-breakdown">
                 <h2>Checkout</h2>
                 {
@@ -73,10 +65,16 @@ const ShoppingCart = (props) => {
                                 <p className="cart-empty">Your shopping cart is currently empty.</p>
                                 <Link className="keep-shopping" to= {{pathname: '/'}}>Continue Shopping</Link>
                             </div>
-                            <div className="dec-line" style={{margin: "auto", width: "85%"}}></div>
                         </>
                 }
             </div>
+            {props.cart.length > 0 ?
+                <SuggestedItems products={products} boughtItems={props.cart} addToCart={props.addToCart} /> :
+                <div className="suggested">
+                    <h2>Suggested Items</h2>
+                    <Products addToCart={props.addToCart} />
+                </div>
+            }
 
         </div>
     )
