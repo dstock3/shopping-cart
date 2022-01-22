@@ -3,6 +3,7 @@
     flex-direction: column;
     width: 55%;
     border: 1px solid white;
+    margin-bottom: 15px;
 }
 
 .item-container {
