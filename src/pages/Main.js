@@ -34,7 +34,7 @@ const Main = (props) => {
                 props.home ? 
                     <Homepage cart={cart} addToCart={addToCart} /> :
                 props.cart ?
-                    <ShoppingCart cart={cart} addToCart={addToCart} clearCart={clearCart}/> :
+                    <ShoppingCart cart={cart} addToCart={addToCart} clearCart={clearCart}z/> :
                 props.item ?
                     <ItemPage item={props.item} cart={cart} addToCart={addToCart} qty={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}/> :
                     null

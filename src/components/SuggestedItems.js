@@ -34,7 +34,8 @@ const SuggestedItems = (props) => {
                         {props.boughtItems.map((boughtItem) => 
                                 props.products.map((productItem) => 
                                     productItem.id !== boughtItem[0].id ?
-                                        <Item key={productItem.id} id={productItem.id} qty={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]} addToCart={props.addToCart} item={productItem} name={productItem.name} image={productItem.image} imgAlt={productItem.alt} des={productItem.des} price={productItem.price} /> : null)
+                                        <Item key={productItem.id} id={productItem.id} qty={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]} addToCart={props.addToCart} item={productItem} name={productItem.name} image={productItem.image} imgAlt={productItem.alt} des={productItem.des} price={productItem.price} /> : null
+                                )
                         )}
                     </div>
                 </> :

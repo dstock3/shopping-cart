@@ -118,6 +118,27 @@
     margin-bottom: 15px;
 }
 
+.order {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 50%;
+    left: 37.5%;
+    margin: auto;
+    border: 1px solid white;
+    background-color: black;
+    height: 175px;
+    width: 450px;
+}
+
+.confirm {
+    width: 25%;
+    height: 20%;
+
+}
+
 @media only screen and (max-width: 600px) {
     .cart {
         display: flex;
