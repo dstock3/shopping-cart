@@ -178,4 +178,9 @@
     .cart-item-image {
         width: 50%;
     }
+
+    .order {
+        left: 2%;
+        width: 95vw;
+    }
 }

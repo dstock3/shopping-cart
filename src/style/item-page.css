@@ -1,7 +1,7 @@
 .item-page {
     display: flex;
     flex-direction: column;
-    width: 45%;
+    width: 66%;
     border: 1px solid white;
     margin-bottom: 15px;
 }
@@ -23,7 +23,7 @@
     flex-direction: column;
     justify-content: space-between;
     width: 50%;
-    margin-right: 5%;
+    margin-inline: 5%;
 }
 
 h1 {
@@ -43,7 +43,7 @@ h1 {
     margin-bottom: 15px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 950px) {
         .item-page {
             width: 100%;
         }
